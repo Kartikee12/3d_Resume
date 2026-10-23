@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Resume</title>
+  <meta name="description" content="Interactive 3D resume.">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="print.css" media="print">
+  <script type="importmap">
+    { "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js" } }
+  </script>
+</head>
+<body>
+  <canvas id="bg" aria-hidden="true"></canvas>
+
+  <nav class="nav">
+    <a href="#home" class="logo" id="logo">YN</a>
+    <div class="links">
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#education">Education</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <main>
+    <section id="home" class="hero">
+      <p class="eyebrow">Hello, I'm</p>
+      <h1 id="name">Kartikee Deshmukh</h1>
+      <p class="role" id="role"></p>
+      <div class="cta">
+        <a class="btn" href="#projects">View my work</a>
+        <a class="btn ghost" href="#" id="download">Download PDF</a>
+      </div>
+      <p class="hint">Move your mouse · scroll to explore</p>
+    </section>
+
+    <section id="about" class="panel">
+      <h2>About</h2>
+      <div class="card"><p id="about-text"></p></div>
+    </section>
+
+    <section id="experience" class="panel">
+      <h2>Experience</h2>
+      <div id="experience-list"></div>
+    </section>
+
+    <section id="projects" class="panel">
+      <h2>Projects</h2>
+      <div class="grid" id="project-list"></div>
+    </section>
+
+    <section id="education" class="panel">
+      <h2>Education</h2>
+      <div id="education-list"></div>
+    </section>
+
+    <section id="contact" class="panel">
+      <h2>Contact</h2>
+      <div class="card contact" id="contact-list"></div>
+    </section>
+  </main>
+
+  <footer>© <span id="year"></span> <span id="footer-name"></span></footer>
+
+  <script type="module" src="render.js"></script>
+  <script type="module" src="script.js"></script>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
